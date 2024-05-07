@@ -260,7 +260,7 @@ class AccountMove(models.Model):
             imp_trib = str("%.2f" % amounts['not_vat_taxes_amount'])
             imp_op_ex = str("%.2f" % amounts['vat_exempt_base_amount'])
             moneda_id = inv.currency_id.l10n_ar_afip_code
-            moneda_ctz = inv.l10n_ar_currency_rate
+            moneda_ctz = inv.l10n_ar_currency_rate if inv.currency_id.l10n_ar_afip_code != 'PES' else 1
 
             CbteAsoc = inv.get_related_invoices_data()
 
