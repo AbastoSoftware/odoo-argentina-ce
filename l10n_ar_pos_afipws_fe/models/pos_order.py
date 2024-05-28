@@ -17,6 +17,8 @@ class PosOrder(models.Model):
     afip_auth_code_due = fields.Date(
         string="CAE/CAI/CAEA due Date", related="account_move.afip_auth_code_due"
     )
+    l10n_latam_document_type = fields.Char(string='Tipo de documento', related="account_move.l10n_latam_document_type_id.name")
+    l10n_ar_invoice_number = fields.Char(string='Numero de factura', related="account_move.l10n_latam_document_number")
 
     def _export_for_ui(self, order):
         res = super()._export_for_ui(order)
@@ -24,6 +26,8 @@ class PosOrder(models.Model):
         res["afip_auth_mode"] = order.afip_auth_mode
         res["afip_auth_code"] = order.afip_auth_code
         res["afip_auth_code_due"] = order.afip_auth_code_due
+        res["l10n_latam_document_type"] = order.l10n_latam_document_type
+        res["l10n_ar_invoice_number"] = order.l10n_ar_invoice_number
         return res
 
     """@api.model

@@ -16,6 +16,9 @@
     "assets": {
         "point_of_sale.assets": [
             "l10n_ar_pos_afipws_fe/static/src/js/pos_order.js",
+        ],
+        "web.assets_qweb": [
+            "/l10n_ar_pos_afipws_fe/static/src/xml/template.xml",
         ]
     },
     "images": [],
