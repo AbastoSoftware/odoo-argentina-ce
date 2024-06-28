@@ -141,11 +141,11 @@ class AfipwsCaea(models.Model):
                 company_id = self.env["res.company"].search([("id", "=", vals["company_id"])])
                 afip_ws = company_id.get_caea_ws()
                 ws = company_id.get_connection(afip_ws).connect()
-                caea = ws.CAEAConsultar(values["period"], values["order"])
+                caea = ws.CAEAConsultar(vals["period"], vals["order"])
 
                 # _logger.info("ws.ErrMsg " % ws.ErrMsg)
                 if caea == "":
-                    caea = ws.CAEASolicitar(values["period"], values["order"])
+                    caea = ws.CAEASolicitar(vals["period"], vals["order"])
                     _logger.info(ws.ErrMsg)
                     _logger.info(caea)
 

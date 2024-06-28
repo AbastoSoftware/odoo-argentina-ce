@@ -27,7 +27,7 @@
                     </header>
                     <sheet>
                         <h1>
-                            <field attrs="{'readonly': True}" name="name"/>
+                            <field attrs="{'readonly': True}" name="name" force_save="1"/>
                         </h1>
                         <group col="6">
                             <field attrs="{'readonly':[('name','!=','/')]}" name="month"/>
