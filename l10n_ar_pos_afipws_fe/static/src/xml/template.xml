@@ -8,12 +8,15 @@
                         <img alt="afip" class="pos-afip-qr" t-attf-src="data:image/png;base64,{{receipt.l10n_ar_afip_qr_image}}"/>
                     </div>
                 </t>
-                <strong>CAE: </strong>
-                <t t-esc="receipt.afip_auth_code"/>
-                <div style="margin-top:3px;">
+                <t t-if="receipt.afip_auth_code">
+                    <strong>CAE: </strong>
+                    <t t-esc="receipt.afip_auth_code"/>
+                    <div style="margin-top:3px;">
                         <strong>Vto. CAE: </strong>
                         <t t-esc="receipt.afip_auth_code_due"/>
-                </div>
+                    </div>
+                </t>
+
             </div>
 
         </div>
